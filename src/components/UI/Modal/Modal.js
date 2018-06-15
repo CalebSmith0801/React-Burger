@@ -5,11 +5,7 @@ import Backdrop from "../Backdrop/Backdrop";
 
 class modal extends Component {
     shouldComponentUpdate(nextProps){
-        return nextProps.show !== this.props.show //prevent modal and children from updating if it is not shown
-    }
-
-    componentWillMount(){
-        console.log("Modal will update");
+        return (nextProps.show !== this.props.show || nextProps.children !== this.props.children) //prevent modal and children from updating if it is not shown
     }
 
     render(){
